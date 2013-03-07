@@ -1,0 +1,49 @@
+﻿@model M13n.Models.ContactModel
+@using M13n.Resources.Views
+
+<hgroup class="title">
+    <h1>@HomeStrings.ContactTitle</h1>
+</hgroup>
+
+<section class="contact">
+    <header>
+        <h3>@HomeStrings.ContactPageSubTitle</h3>
+    </header>
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, @HomeStrings.ContactValidationSummary)
+
+        <fieldset>
+            <div>
+                @Html.LabelFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name)
+                @Html.ValidationMessageFor(x => x.Name)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.Email)
+                @Html.TextBoxFor(x => x.Email)
+                @Html.ValidationMessageFor(x => x.Email)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.Subject )
+                @Html.TextBoxFor(x => x.Subject)
+                @Html.ValidationMessageFor(x => x.Subject)
+            </div>
+            <div>
+                @Html.LabelFor(x => x.Message)
+                @Html.TextAreaFor(x => x.Message)
+                @Html.ValidationMessageFor(x => x.Message)
+            </div>
+            <input type="submit" value="@HomeStrings.ContactFormSendButtonLabel" />
+
+        </fieldset>
+        
+    }
+
+</section>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

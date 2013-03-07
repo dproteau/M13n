@@ -1,0 +1,25 @@
+﻿@using M13n.Helpers
+@using M13n.Resources
+@{
+    var rawUrl= this.Request.RawUrl;
+    var curCulture = this.UICulture;
+}
+
+
+@*
+---DISCLAIMER---
+I show flags in the links with the language name but country flags are NOT languages.
+I do this because it more visual appealing in the prototype but PLEASE DON'T DO THIS IN PRODUCTION.
+*@
+
+<ul>
+@foreach (CultureIdentifier cu in Enum.GetValues(typeof (CultureIdentifier)))
+{
+    <li>
+        <a href="@Url.Action("ChangeCulture", "Culture", new { lang = (int)cu, returnUrl = rawUrl, culture = curCulture })" id="culture_@cu.ToString()">
+            <img src="@Url.Content("~/Images/Flags/" + @cu.ToString() + ".png")" /> 
+            @CultureNames.ResourceManager.GetString(cu.ToString()) 
+        </a>
+    </li>
+}
+</ul>
