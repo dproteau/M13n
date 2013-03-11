@@ -1,5 +1,29 @@
-﻿@{
-    ViewBag.Title = "About";
-}
+﻿@using M13n.Resources.Views
 
-[Put some content here about the intent of the project and other interesting stuff]
+<hgroup class="title">
+    <h1>@HomeStrings.About_Title</h1>
+</hgroup>
+
+<h3>Here is a rough draft of what M13n is about:</h3>
+<ul>
+    <h4>Points of interest:</h4>
+    <li>
+        Localization using the URL and a custom route handler (M13n.RouteConfig ln17 & M13n.Helpers.MultiCultureMvcRouteHandler ln14)
+    </li>
+    <li>
+        An enumeration defines every language available (M13n.Helpers.CultureIdentifier) and it is used as a route constraint (M13n.RouteConfig ln21) and as the source of culture to show to the user (_CultureSwitchControl.cshtml)
+    </li>
+</ul>
+
+<ul>
+    <h4>Some of my starting points:</h4>
+    <li>Alexander Böhm (http://www.alebo.de/2009/03/localization-with-aspnet-mvc-using-routing/)</li>
+    <li>Alex Adamyan (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html et http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html)</li>
+    <li>K. Scott Allen (http://odetocode.com/Blogs/scott/archive/2009/07/16/resource-files-and-asp-net-mvc-projects.aspx)</li>
+</ul>
+
+
+
+
+
+

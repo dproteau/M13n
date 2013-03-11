@@ -117,37 +117,16 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data name="Home_FeatureText" xml:space="preserve">
-    <value>&lt;Español&gt;This prototype is mainly the sum of numerous blog posts and personal experimentations.  I want to test also some theories about implicit and explicit (and sessionless) localization.  More details can be found on the 'About' page.&lt;/Español&gt;</value>
+	<data name="About" xml:space="preserve">
+    <value>À propos</value>
   </data>
-	<data name="Home_Welcome" xml:space="preserve">
-    <value>Bienvenido a la M13N prototipo!</value>
+	<data name="Contact" xml:space="preserve">
+    <value>Contact</value>
   </data>
-	<data name="Contact_MessageLabel" xml:space="preserve">
-		<value>Mensaje</value>
-	</data>
-	<data name="Contact_NameLabel" xml:space="preserve">
-		<value>Nombre completo</value>
-	</data>
-	<data name="Contact_SendButtonLabel" xml:space="preserve">
-		<value>Enviar</value>
-	</data>
-	<data name="Contact_SubjectLabel" xml:space="preserve">
-		<value>Sujeto</value>
-	</data>
-	<data name="Contact_PageSubTitle" xml:space="preserve">
-		<value>Enviar un mensaje nada</value>
-	</data>
-	<data name="Contact_Title" xml:space="preserve">
-		<value>Contacto</value>
-	</data>
-	<data name="Contact_ValidationSummary" xml:space="preserve">
-		<value>No es posible el envío de este mensaje. Por favor, corrija los errores e inténtelo de nuevo.</value>
-	</data>
-	<data name="Contact_EmailLabel" xml:space="preserve">
-		<value>Email</value>
-	</data>
-	<data name="About_Title" xml:space="preserve">
-		<value>Acerca de este prototipo</value>
-	</data>
+	<data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+	<data name="Title" xml:space="preserve">
+    <value>M13n (MvcLocalization)</value>
+  </data>
 </root>

@@ -11,26 +11,26 @@ namespace M13n.Models
 {
     public class ContactModel
     {
-        [Required(ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "RequiredField")]
-        [StringLength(50, ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "MaxLengthField")]
-        [Display(ResourceType = typeof(HomeStrings), Name = "ContactFormNameLabel")]
+        [Required(ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "Required")]
+        [StringLength(50, ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "MaxLength")]
+        [Display(ResourceType = typeof(HomeStrings), Name = "Contact_NameLabel")]
         public string Name { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "RequiredField")]
-        [StringLength(50, ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "MaxLengthField")]
-        [Email( ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "EmailField")]
-        [Display( ResourceType = typeof(HomeStrings), Name = "ContactFormEmailLabel")]
+        [Required(ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "Required")]
+        [StringLength(50, ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "MaxLength")]
+        [Email(ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "EmailAddress")]
+        [Display( ResourceType = typeof(HomeStrings), Name = "Contact_EmailLabel")]
         public string Email { get; set; }
 
-        [Required(ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "RequiredField")]
-        [StringLength(25, ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "MaxLengthField")]
-        [Display( ResourceType = typeof(HomeStrings), Name = "ContactFormSubjectLabel")]
+        [Required(ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "Required")]
+        [StringLength(25, ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "MaxLength")]
+        [Display( ResourceType = typeof(HomeStrings), Name = "Contact_SubjectLabel")]
         public string Subject { get; set; }
 
-        [Required( ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "RequiredField")]
-        [StringLength(250, ErrorMessageResourceType = typeof(SharedStrings), ErrorMessageResourceName = "MaxLengthField")]
+        [Required(ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "Required")]
+        [StringLength(250, ErrorMessageResourceType = typeof(ValidationErrors), ErrorMessageResourceName = "MaxLength")]
         [DataType(DataType.MultilineText)]
-        [Display( ResourceType = typeof(HomeStrings), Name = "ContactFormMessageLabel")]
+        [Display( ResourceType = typeof(HomeStrings), Name = "Contact_MessageLabel")]
         public string Message { get; set; }
 
     }

@@ -61,92 +61,101 @@ namespace M13n.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About This Prototype.
+        /// </summary>
+        public static string About_Title {
+            get {
+                return ResourceManager.GetString("About_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        public static string ContactFormEmailLabel {
+        public static string Contact_EmailLabel {
             get {
-                return ResourceManager.GetString("ContactFormEmailLabel", resourceCulture);
+                return ResourceManager.GetString("Contact_EmailLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Your Message.
         /// </summary>
-        public static string ContactFormMessageLabel {
+        public static string Contact_MessageLabel {
             get {
-                return ResourceManager.GetString("ContactFormMessageLabel", resourceCulture);
+                return ResourceManager.GetString("Contact_MessageLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
-        public static string ContactFormNameLabel {
+        public static string Contact_NameLabel {
             get {
-                return ResourceManager.GetString("ContactFormNameLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Send.
-        /// </summary>
-        public static string ContactFormSendButtonLabel {
-            get {
-                return ResourceManager.GetString("ContactFormSendButtonLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Subject.
-        /// </summary>
-        public static string ContactFormSubjectLabel {
-            get {
-                return ResourceManager.GetString("ContactFormSubjectLabel", resourceCulture);
+                return ResourceManager.GetString("Contact_NameLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Send a message into the void.
         /// </summary>
-        public static string ContactPageSubTitle {
+        public static string Contact_PageSubTitle {
             get {
-                return ResourceManager.GetString("ContactPageSubTitle", resourceCulture);
+                return ResourceManager.GetString("Contact_PageSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Contact_SendButtonLabel {
+            get {
+                return ResourceManager.GetString("Contact_SendButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subject.
+        /// </summary>
+        public static string Contact_SubjectLabel {
+            get {
+                return ResourceManager.GetString("Contact_SubjectLabel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
-        public static string ContactTitle {
+        public static string Contact_Title {
             get {
-                return ResourceManager.GetString("ContactTitle", resourceCulture);
+                return ResourceManager.GetString("Contact_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Unable to send this message.  Please correct the errors and try again..
         /// </summary>
-        public static string ContactValidationSummary {
+        public static string Contact_ValidationSummary {
             get {
-                return ResourceManager.GetString("ContactValidationSummary", resourceCulture);
+                return ResourceManager.GetString("Contact_ValidationSummary", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This prototype is mainly based on two blog posts by Alex Adamyan and some of the comments.  (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html &amp; http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html).
+        ///   Looks up a localized string similar to This prototype is mainly the sum of numerous blog posts and personal experimentations.  I want to test also some theories about implicit and explicit (and sessionless) localization.  More details can be found on the &apos;About&apos; page..
         /// </summary>
-        public static string FeatureText {
+        public static string Home_FeatureText {
             get {
-                return ResourceManager.GetString("FeatureText", resourceCulture);
+                return ResourceManager.GetString("Home_FeatureText", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to the M13n (MvcLocalization) prototype!.
+        ///   Looks up a localized string similar to Welcome to the M13n prototype!.
         /// </summary>
-        public static string Welcome {
+        public static string Home_Welcome {
             get {
-                return ResourceManager.GetString("Welcome", resourceCulture);
+                return ResourceManager.GetString("Home_Welcome", resourceCulture);
             }
         }
     }

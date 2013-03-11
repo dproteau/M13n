@@ -2,17 +2,17 @@
 @using M13n.Resources.Views
 
 <hgroup class="title">
-    <h1>@HomeStrings.ContactTitle</h1>
+    <h1>@HomeStrings.Contact_Title</h1>
 </hgroup>
 
 <section class="contact">
     <header>
-        <h3>@HomeStrings.ContactPageSubTitle</h3>
+        <h3>@HomeStrings.Contact_PageSubTitle</h3>
     </header>
 
     @using (Html.BeginForm())
     {
-        @Html.ValidationSummary(true, @HomeStrings.ContactValidationSummary)
+        @Html.ValidationSummary(true, @HomeStrings.Contact_ValidationSummary)
 
         <fieldset>
             <div>
@@ -35,7 +35,7 @@
                 @Html.TextAreaFor(x => x.Message)
                 @Html.ValidationMessageFor(x => x.Message)
             </div>
-            <input type="submit" value="@HomeStrings.ContactFormSendButtonLabel" />
+            <input type="submit" value="@HomeStrings.Contact_SendButtonLabel" />
 
         </fieldset>
         

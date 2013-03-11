@@ -170,10 +170,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CultureNames.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\SharedStrings.Designer.cs">
+    <Compile Include="Resources\AppStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SharedStrings.resx</DependentUpon>
+      <DependentUpon>AppStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationErrors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationErrors.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Views\HomeStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -311,6 +316,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\ValidationMessages.en.resx" />
     <EmbeddedResource Include="App_GlobalResources\ValidationMessages.es.resx" />
     <EmbeddedResource Include="App_GlobalResources\ValidationMessages.fr.resx" />
     <EmbeddedResource Include="App_GlobalResources\ValidationMessages.resx">
@@ -321,13 +327,20 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CultureNames.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SharedStrings.en.resx" />
-    <EmbeddedResource Include="Resources\SharedStrings.es.resx" />
-    <EmbeddedResource Include="Resources\SharedStrings.fr.resx" />
-    <EmbeddedResource Include="Resources\SharedStrings.resx">
+    <EmbeddedResource Include="Resources\AppStrings.en.resx" />
+    <EmbeddedResource Include="Resources\AppStrings.es.resx" />
+    <EmbeddedResource Include="Resources\AppStrings.fr.resx" />
+    <EmbeddedResource Include="Resources\AppStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>SharedStrings.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationErrors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationErrors.en.resx" />
+    <EmbeddedResource Include="Resources\ValidationErrors.es.resx" />
+    <EmbeddedResource Include="Resources\ValidationErrors.fr.resx" />
     <EmbeddedResource Include="Resources\Views\HomeStrings.en.resx" />
     <EmbeddedResource Include="Resources\Views\HomeStrings.es.resx" />
     <EmbeddedResource Include="Resources\Views\HomeStrings.fr.resx" />

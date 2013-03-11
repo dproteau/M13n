@@ -22,14 +22,14 @@ namespace M13n.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class SharedStrings {
+    public class AppStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal SharedStrings() {
+        internal AppStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace M13n.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("M13n.Resources.SharedStrings", typeof(SharedStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("M13n.Resources.AppStrings", typeof(AppStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,38 +79,11 @@ namespace M13n.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The field &apos;{0}&apos; must be a valid email address..
-        /// </summary>
-        public static string EmailField {
-            get {
-                return ResourceManager.GetString("EmailField", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The field &apos;{0}&apos; must be at most {1} characters long..
-        /// </summary>
-        public static string MaxLengthField {
-            get {
-                return ResourceManager.GetString("MaxLengthField", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The field &apos;{0}&apos; is required.
-        /// </summary>
-        public static string RequiredField {
-            get {
-                return ResourceManager.GetString("RequiredField", resourceCulture);
             }
         }
         

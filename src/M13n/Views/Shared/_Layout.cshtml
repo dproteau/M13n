@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@SharedStrings.Title</title>
+    <title>@AppStrings.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -11,20 +11,22 @@
 <body>
     <header>
         <div class="content-wrapper">
+            <a href="https://github.com/dproteau/m13n">
+                <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub">
+            </a>
             <div class="float-right">
                 @Html.Partial("_CultureSwitchControl")
             </div>
             <div class="float-right">
                 <nav>
                     <ul id="menu">
-                        <li>@Html.ActionLink(SharedStrings.Home, "Index", "Home")</li>
-                        <li>@Html.ActionLink(SharedStrings.About, "About", "Home")</li>
-                        <li>@Html.ActionLink(SharedStrings.Contact, "Contact", "Home")</li>
+                        <li>@Html.ActionLink(AppStrings.Home, "Index", "Home")</li>
+                        <li>@Html.ActionLink(AppStrings.About, "About", "Home")</li>
+                        <li>@Html.ActionLink(AppStrings.Contact, "Contact", "Home")</li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <a href="https://github.com/dproteau/m13n"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
     </header>
     <div id="body">
         @RenderSection("featured", required: false)

@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FieldMustBeDate" xml:space="preserve">
-    <value>The field '{0}' must be a date.</value>
+    <value>El campo '{0}' debe ser una fecha.</value>
     <comment>ClientDataTypeModelValidatorProvider</comment>
   </data>
   <data name="FieldMustBeNumeric" xml:space="preserve">
-    <value>The field '{0}' must be a number.</value>
+    <value>El campo '{0}' debe ser un número.</value>
     <comment>ClientDataTypeModelValidatorProvider</comment>
   </data>
   <data name="PropertyValueInvalid" xml:space="preserve">
