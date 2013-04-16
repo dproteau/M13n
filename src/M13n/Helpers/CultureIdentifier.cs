@@ -12,11 +12,11 @@
     /// </remarks>
     public enum CultureIdentifier
     {
-        //nl = 0x0013,	// Dutch
-        en = 0x0009,	// English
-        fr = 0x000C,	// French
-        //de = 0x0007,	// German
-        es = 0x000A     // Spanish
+        //de       = 0x0007,	// German
+        //nl       = 0x0013,	// Dutch
+        en       = 0x0009,	// English
+        fr       = 0x000C,	// French
+        es       = 0x000A   // Spanish
     }
 
 }

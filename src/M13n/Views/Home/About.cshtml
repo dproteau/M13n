@@ -1,25 +1,50 @@
 ﻿@using M13n.Resources.Views
 
-<hgroup class="title">
-    <h1>@HomeStrings.About_Title</h1>
-</hgroup>
+<h1>@HomeStrings.About_Title</h1>
 
-<h3>Here is a rough draft of what M13n is about:</h3>
+<h2>Here is a rough draft of what M13n is about:</h2>
 <ul>
-    <h4>Points of interest:</h4>
+    <h3>Points of interest (tl:dr):</h3>
     <li>
-        Localization using the URL and a custom route handler (M13n.RouteConfig ln17 & M13n.Helpers.MultiCultureMvcRouteHandler ln14)
+        All the localization process is server side using Windows resources (.resx) files
     </li>
     <li>
-        An enumeration defines every language available (M13n.Helpers.CultureIdentifier) and it is used as a route constraint (M13n.RouteConfig ln21) and as the source of culture to show to the user (_CultureSwitchControl.cshtml)
+        An enumeration defines every language available and it is used as route constraints and as the source of culture to show to the user
+    </li>
+    <li>
+        Explicit localization using routing with a custom route handler
+    </li>
+</ul>
+<ul>
+    <h3>What we might expect next: </h3>
+    <li>
+        Improve the documentation
+    </li>
+    <li>
+        Improve the localization coverage of the prototype
+    </li>
+    <li>
+        Find an elegant approach to manage the region in the localization enumeration
+    </li>
+    <li>
+        Rework the CultureSwitchControl
+    </li>
+    <li>
+        Get some decent unit tests
     </li>
 </ul>
 
 <ul>
-    <h4>Some of my starting points:</h4>
-    <li>Alexander Böhm (http://www.alebo.de/2009/03/localization-with-aspnet-mvc-using-routing/)</li>
-    <li>Alex Adamyan (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html et http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html)</li>
-    <li>K. Scott Allen (http://odetocode.com/Blogs/scott/archive/2009/07/16/resource-files-and-asp-net-mvc-projects.aspx)</li>
+    <h3>Some of my starting points:</h3>
+    <li>
+        Alexander Böhm (http://www.alebo.de/2009/03/localization-with-aspnet-mvc-using-routing/)
+    </li>
+    <li>
+        Alex Adamyan (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html and http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html)
+    </li>
+    <li>
+        K. Scott Allen (http://odetocode.com/Blogs/scott/archive/2009/07/16/resource-files-and-asp-net-mvc-projects.aspx)
+    </li>
 </ul>
 
 

@@ -22,6 +22,4 @@ namespace M13n.Helpers
         }
     }
 
-    public class SingleCultureMvcRouteHandler : MvcRouteHandler { }
-
 }

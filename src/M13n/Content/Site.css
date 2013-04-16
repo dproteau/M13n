@@ -204,6 +204,33 @@ ul#menu {
             text-decoration: none;
         }
 
+/* Language Selector
+----------------------------------------------------------*/
+ul#langselect {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: right;
+}
+
+    ul#langselect li {
+        display: inline;
+        list-style: none;
+        padding-left: 15px;
+    }
+
+        ul#langselect li a {
+            background: none;
+            color: #999;
+            text-decoration: none;
+        }
+
+        ul#langselect li a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
 
 /* page elements
 ----------------------------------------------------------*/
