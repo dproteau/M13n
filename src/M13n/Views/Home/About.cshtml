@@ -3,52 +3,115 @@
 <h1>@HomeStrings.About_Title</h1>
 
 <h2>Here is a rough draft of what M13n is about:</h2>
+<h3>Points of interest (tl:dr)</h3>
 <ul>
-    <h3>Points of interest (tl:dr):</h3>
-    <li>
-        All the localization process is server side using Windows resources (.resx) files
+    <li>All the localization process is server side using Windows resources (.resx) files
     </li>
-    <li>
-        An enumeration defines every language available and it is used as route constraints and as the source of culture to show to the user
+    <li>An enumeration defines every language available and it is used as a route constraint and as the source of available cultures to show to the user
     </li>
-    <li>
-        Explicit localization using routing with a custom route handler
-    </li>
-</ul>
-<ul>
-    <h3>What we might expect next: </h3>
-    <li>
-        Improve the documentation
-    </li>
-    <li>
-        Improve the localization coverage of the prototype
-    </li>
-    <li>
-        Find an elegant approach to manage the region in the localization enumeration
-    </li>
-    <li>
-        Rework the CultureSwitchControl
-    </li>
-    <li>
-        Get some decent unit tests
+    <li>Explicit localization using routing with a custom route handler
     </li>
 </ul>
 
+<h3>Getting in the details</h3>
+<h4>CultureIdentifier Enumeration</h4>
+<p>
+    Base on the ISO 639-1 code of names for languages and its numeric value is the culture identifier (LCID) of the <code>System.Globalization.CultureInfo</code> class.
+   
+    <code>
+        <br />
+        public enum CultureIdentifier<br />
+        {<br />
+        en       = 0x0009,	// English<br />
+        fr       = 0x000C,	// French<br />
+        es       = 0x000A   // Spanish<br />
+        }<br />
+    </code>
+    To help you with all these codes and values there is a text file 'CultureIdentifier.cs.MoreExtensiveListOf_ISO639-1.txt' with most of the ISO 639-1 codes.  For the moment cultures with country/region-code-2 are not included right now. "en-AU", "en-US" don't make good enums... I'm looking for a simple and elegant solution to this problem.
+</p>
+<h4>Custom Routing And Localization</h4>
+<p>
+    There are some helpers for you to handle explicit localization by using the URL.  
+</p>
+<p>
+    First, there is a custom route handler <code>MultiCultureMvcRouteHandler</code>.  It handles the culture in the URL and it sets it in the current thread.  Here is an example on how to use it:
+   
+    <code>
+        <br />
+        // Default route with explicit localization<br />
+        routes.MapRoute(<br />
+        name: "MultiCulture",<br />
+        url: "{controller}/{action}/{id}",<br />
+        defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional}<br />
+        ).RouteHandler = new MultiCultureMvcRouteHandler();<br />
+    </code>
+</p>
+<p>
+    Second, there is an utility method to include at the end of the route registration in the <code>RouteConfig</code> class.
+   
+    <code>
+        <br />
+        public static void RegisterRoutes(RouteCollection routes)<br />
+        {<br />
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");<br />
+        [...]<br />
+        LocalizeRoutes(routes);<br />
+        }<br />
+    </code>
+    The method has an optional parameter to set the default language and it can be used like this:
+    <code>
+        <br />
+        public static void RegisterRoutes(RouteCollection routes)<br />
+        {<br />
+        routes.IgnoreRoute("{resource}.axd/{*pathInfo}");<br />
+        [...]<br />
+        LocalizeRoutes(routes, CultureIdentifier.es);<br />
+        }<br />
+    </code>
+    The LocalizeRoutes method adds (to each route with a <code>MultiCultureMvcRouteHandler</code>): the culture segment in the URL, an optional default culture and a culture constraint (so we get a 404 if the culture code is not in the <code>CultureIdentifier</code> enum).  
+</p>
+<h4>Resources Files</h4>
+<p>The resources files are stored in a folder simply named 'Resources'.  At the root of this folder there are the global resource files.  There are the AppString.*.resx files acting as global localized strings.  There are the ValidationErrors.*.resx files containing some error and validation messages, it is easier to put them in a separate file so we can reuse them in another project without too much modification.  There is the CultureNames.resx file containing some culture names in their native name (like Deutsch for German).</p>
+<p>The other sub-folders mimic the namespace structure of the localizable objects (mainly views) in the project.</p>
+<h3>Implicit localization</h3>
+<p>
+    To enable implicit localization (without the routing) we must edit the Web.config with something like:
+   
+    <code>
+        <br />
+        &lt;configuration&gt;<br />
+        [...]<br />
+        &lt;system.web&gt;<br />
+        &lt;globalization culture="en" uiCulture="auto:en" /&gt;<br />
+        [...]<br />
+
+    </code>
+</p>
+
+<h3>What we might expect next (a.k.a. todo)</h3>
 <ul>
-    <h3>Some of my starting points:</h3>
-    <li>
-        Alexander Böhm (http://www.alebo.de/2009/03/localization-with-aspnet-mvc-using-routing/)
+    <li>Improve the documentation
     </li>
-    <li>
-        Alex Adamyan (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html and http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html)
+    <li>Improve the localization coverage of the prototype
     </li>
-    <li>
-        K. Scott Allen (http://odetocode.com/Blogs/scott/archive/2009/07/16/resource-files-and-asp-net-mvc-projects.aspx)
+    <li>Find an elegant approach to manage the region in the localization enumeration (like en-US and en-GB)
+    </li>
+    <li>Rework the CultureSwitchControl
+    </li>
+    <li>Get some decent unit tests
+    </li>
+    <li>Code formatting in localized text 
     </li>
 </ul>
-
-
-
-
-
+@*
+<h3>Some of my starting points</h3>
+<ul>
+    <li>Alexander Böhm (http://www.alebo.de/2009/03/localization-with-aspnet-mvc-using-routing/)
+    </li>
+    <li>Alex Adamyan (http://adamyan.blogspot.ca/2010/02/aspnet-mvc-2-localization-complete.html and http://adamyan.blogspot.ca/2010/07/addition-to-aspnet-mvc-localization.html)
+    </li>
+    <li>K. Scott Allen (http://odetocode.com/Blogs/scott/archive/2009/07/16/resource-files-and-asp-net-mvc-projects.aspx)
+    </li>
+</ul>
+*@
 

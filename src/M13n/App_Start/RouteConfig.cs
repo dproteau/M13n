@@ -35,8 +35,8 @@ namespace M13n
         /// <summary>
         /// Apply localization to MulticultureMvcRoutes
         /// </summary>
-        /// <param name="routes"></param>
-        private static void LocalizeRoutes(IEnumerable<RouteBase> routes)
+        /// <param name="routes">Routes list to apply localization if needed</param>
+        private static void LocalizeRoutes(IEnumerable<RouteBase> routes, CultureIdentifier ci = 0)
         {
             CultureConstraint cc = null;
 
@@ -50,14 +50,16 @@ namespace M13n
                         r.Url = urlSegment + r.Url;
                     }
 
-                    /* If you want an explicit default culture then just uncomment this bloc
-                    //Adding default culture 
-                    if (r.Defaults == null)
+                    if (ci > 0)
                     {
-                        r.Defaults = new RouteValueDictionary();
+                        //Adding default culture 
+                        if (r.Defaults == null)
+                        {
+                            r.Defaults = new RouteValueDictionary();
+                        }
+                        //Set english as default culture
+                        r.Defaults["culture"] = ci.ToString();
                     }
-                    r.Defaults["culture"] = CultureIdentifier.en.ToString();
-                    */
 
                     //Adding constraint for culture param
                     if (r.Constraints == null)

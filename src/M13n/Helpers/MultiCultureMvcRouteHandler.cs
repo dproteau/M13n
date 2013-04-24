@@ -13,10 +13,10 @@ namespace M13n.Helpers
     
         protected override IHttpHandler GetHttpHandler(RequestContext requestContext)
         {
-            var routeDataCultureName = requestContext.RouteData.Values[RouteDataCultureKey].ToString();
-            var rdc = new CultureInfo(routeDataCultureName);
-            Thread.CurrentThread.CurrentUICulture = rdc;
-            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(rdc.Name);
+            var routeCultureName = requestContext.RouteData.Values[RouteDataCultureKey].ToString();
+            var rci = new CultureInfo(routeCultureName);
+            Thread.CurrentThread.CurrentUICulture = rci;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(rci.Name);
 
             return base.GetHttpHandler(requestContext);
         }
